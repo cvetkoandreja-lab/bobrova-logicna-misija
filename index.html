@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bobrova logična misija</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="label">Interaktivna igra za logično mišljenje</p>
+      <h1>Bobrova logična misija</h1>
+      <p class="lead">
+        Reši logične izzive, preveri pogoje, poišči vzorce in iz zbranih črk sestavi skrivno geslo.
+      </p>
+    </div>
+    <div class="beaver" aria-hidden="true">🦫</div>
+  </header>
+
+  <main>
+    <section class="panel intro" id="intro">
+      <h2>Navodila</h2>
+      <p>
+        Delajte v paru ali skupini. Pri vsakem izzivu si najprej natančno oglejte kartico,
+        nato izberite odgovor in kliknite <strong>Preveri</strong>.
+      </p>
+      <p>
+        Pri pravilnem odgovoru prejmete črko. Ker se naloge premešajo, črke na koncu
+        uredite v smiselno skrivno geslo.
+      </p>
+      <button id="startBtn" class="primary">Začni misijo</button>
+    </section>
+
+    <section class="progress panel hidden" id="progressPanel">
+      <div>
+        <strong>Napredek:</strong>
+        <span id="progressText">0 / 0</span>
+      </div>
+      <div>
+        <strong>Zbrane črke:</strong>
+        <span id="letters">—</span>
+      </div>
+    </section>
+
+    <section class="panel card hidden" id="challengeCard">
+      <p class="small" id="challengeType"></p>
+      <h2 id="challengeTitle"></h2>
+
+      <div id="imageWrap"></div>
+      <div id="challengeBody"></div>
+
+      <form id="answerForm" class="answers"></form>
+
+      <div class="actions">
+        <button id="checkBtn" class="primary" type="button">Preveri</button>
+        <button id="hintBtn" type="button">Namig</button>
+        <button id="nextBtn" type="button" class="hidden">Naslednji izziv</button>
+      </div>
+
+      <div id="feedback" class="feedback" role="status"></div>
+    </section>
+
+    <section class="panel final hidden" id="finalPanel">
+      <h2>Končna ključavnica</h2>
+      <p>
+        Iz zbranih črk sestavite besedo, ki poimenuje področje današnjih izzivov.
+      </p>
+      <input id="passwordInput" type="text" placeholder="Vpiši geslo">
+      <button id="unlockBtn" class="primary">Odkleni</button>
+      <div id="finalFeedback" class="feedback"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Namig za učitelja: naloge, odgovore in črke lahko urejate v datoteki <code>script.js</code>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
