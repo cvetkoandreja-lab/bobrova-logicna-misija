@@ -57,9 +57,9 @@ const allChallenges = [
     question: "Katera od spodnjih slik najboljše prikazuje manjkajoči opravek?",
     labels: ["A", "B", "C"],
     options: ["Slika A", "Slika B", "Slika C"],
-    correct: 2,
+    correct: 1,
     hint: "Poglej opravila, ki so že prikazana, in poišči tisto, ki v zaporedju še manjka.",
-    explanation: "Manjkajoči opravek najbolje prikazuje slika C."
+    explanation: "Manjkajoči opravek najbolje prikazuje slika B, saj po igri oziroma dejavnosti sledi delo za mizo, nato umivanje zob in spanje."
   },
   {
     title: "Kovanci",
@@ -89,48 +89,53 @@ const allChallenges = [
     explanation: "Pot A – D – E – H – F – G – C – B uporabi vsako reko natanko enkrat."
   },
   {
-    title: "Slika gradu",
-    type: "Kombinatorika",
-    image: "images/logika-07.png",
-    imageAlt: "Kartica Slika gradu",
-    question: "Na koliko različnih načinov je mogoče narediti prikazano sliko?",
-    options: ["12 načinov", "24 načinov", "36 načinov", "48 načinov"],
-    correct: 2,
-    hint: "Za sliko izbereš 2 zelena kvadrata, 1 oranžen pravokotnik in 1 moder trikotnik.",
-    explanation: "Možnih je 36 načinov: izbereš 2 od 4 kvadratov, 1 od 2 pravokotnikov in 1 od 3 trikotnikov."
-  },
+  title: "Slika gradu",
+  type: "Različne razporeditve",
+  image: "images/logika-07.png",
+  imageAlt: "Kartica Slika gradu",
+  question: "Na koliko različnih načinov je mogoče sestaviti prikazano obliko gradu?",
+  options: [
+    "2 načina",
+    "3 načini",
+    "4 načini",
+    "6 načinov"
+  ],
+  correct: 2,
+  hint: "Razmisli, kako lahko razporediš kvadrate in pravokotnik v spodnjem delu gradu.",
+  explanation: "Obliko gradu lahko sestavimo na 4 načine: kot na prikazani sliki, z zamenjavo kvadrata in pravokotnika, s pokončno postavljenim pravokotnikom ali z uporabo dveh kvadratov namesto pravokotnika."
+}
   {
-    title: "Diagonalno",
-    type: "Pogoj ČE / SICER",
-    image: "images/logika-08.png",
-    imageAlt: "Kartica Diagonalno",
-    question: "Katero pravilo uporablja muc pri premikanju?",
-    options: [
-      "Če je na kvadratu miš, se premakne levo, sicer gre desno.",
-      "Če je na kvadratu miš, gre naravnost, sicer se ustavi.",
-      "Če ni miši, se premakne levo, sicer gre desno.",
-      "Vedno se premika samo v desno."
-    ],
-    correct: 0,
-    hint: "Preberi pravilo na kartici: pomembni sta besedi ČE in SICER.",
-    explanation: "Muc uporablja pogoj: če je na kvadratu miš, se premakne levo, sicer gre desno."
-  },
-  {
-    title: "Kino",
-    type: "Preverjanje koordinat",
-    image: "images/logika-09.png",
-    imageAlt: "Kartica Kino",
-    question: "Kaj moramo pri tej nalogi preveriti?",
-    options: [
-      "Ali se seznam sedežev ujema s sliko.",
-      "Ali so vsi sedeži pobarvani enako.",
-      "Ali je v kinu dovolj luči.",
-      "Ali so sedeži razvrščeni po abecedi."
-    ],
-    correct: 0,
-    hint: "Primerjaj vsak par števil v seznamu s prikazanimi zasedenimi sedeži.",
-    explanation: "Pri nalogi preverjamo, ali se seznam koordinat ujema s sliko sedežev."
-  },
+  title: "Diagonalno",
+  type: "Pogoj ČE / SICER",
+  image: "images/logika-08.png",
+  imageAlt: "Kartica Diagonalno",
+  question: "Koliko miši je pojedel muc?",
+  options: [
+    "2 miši",
+    "3 miši",
+    "4 miši",
+    "5 miši"
+  ],
+  correct: 1,
+  hint: "Sledi poti muca po puščicah in preštej polja, na katerih je bila miš.",
+  explanation: "Muc je pojedel 3 miši."
+}
+ {
+  title: "Kino",
+  type: "Preverjanje koordinat",
+  image: "images/logika-09.png",
+  imageAlt: "Kartica Kino",
+  question: "Je seznam sedežev pravilen ali je v njem napaka?",
+  options: [
+    "Seznam je pravilen.",
+    "V seznamu je napaka: namesto (3, 4) je zapisano (4, 3).",
+    "V seznamu je napaka: namesto (2, 6) je zapisano (6, 2).",
+    "V seznamu manjka sedež (1, 3)."
+  ],
+  correct: 1,
+  hint: "Posebej preveri, ali sta vrstica in stolpec pri vseh sedežih zapisana v pravem vrstnem redu.",
+  explanation: "V seznamu je napaka: na sliki je označen sedež (3, 4), v seznamu pa je zapisan (4, 3)."
+}
   {
     title: "Zemljevid",
     type: "Koordinate",
@@ -187,17 +192,22 @@ const allChallenges = [
     hint: "Poišči preostala okna, ki imajo sosede levo, desno, zgoraj in spodaj.",
     explanation: "Bober bo letos zamenjal 1 okno."
   },
-  {
-    title: "Mačka in miš",
-    type: "Sledenje pravilom",
-    image: "images/logika-15.png",
-    imageAlt: "Kartica Mačka in miš",
-    question: "Kdo se premakne prvi?",
-    options: ["Mačka", "Miš", "Oba hkrati", "Nobeden"],
-    correct: 0,
-    hint: "Preberi navodilo na kartici. Premikata se izmenično.",
-    explanation: "Prva se premakne mačka, nato miš, nato spet mačka in tako naprej."
-  }
+{
+  title: "Mačka in miš",
+  type: "Sledenje pravilom",
+  image: "images/logika-15.png",
+  imageAlt: "Kartica Mačka in miš",
+  question: "Ali se lahko miš izogne mački?",
+  options: [
+    "Da, miš se lahko izogne mački.",
+    "Ne, mačka miš zagotovo ujame.",
+    "Ne moremo ugotoviti.",
+    "Mačka in miš se sploh ne premikata."
+  ],
+  correct: 0,
+  hint: "Sledi premikom izmenično: najprej se premakne mačka, nato miš, nato spet mačka. Pri premiku upoštevaj samo puščice na polju, kjer robot stoji.",
+  explanation: "Da, miš se lahko izogne mački. Če sledimo pravilom premikanja, mačka in miš ne pristaneta na istem polju."
+}
 ];
 
 const finalPassword = "LOGIKA";
