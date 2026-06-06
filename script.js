@@ -21,9 +21,9 @@ const challenges = [
       "Slika C",
       "Slika D"
     ],
-    correct: 3,
+    correct: 2,
     hint: "Preveriti moraš oba pogoja: šaman nima palice in ima zapete vse gumbe.",
-    explanation: "Pravilna je slika D, ker šaman nima palice in ima zapete vse gumbe.",
+    explanation: "Pravilna je slika C, ker šaman nima palice in ima zapete vse gumbe.",
     letter: "L"
   },
   {
